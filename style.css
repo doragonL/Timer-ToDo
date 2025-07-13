@@ -77,3 +77,7 @@ button {
     justify-content: center;
   }
 }
+
+.priority-low span { color: green; }
+.priority-medium span { color: orange; }
+.priority-high span { color: red; font-weight: bold; }

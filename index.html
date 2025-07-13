@@ -14,7 +14,12 @@
       <button onclick="addTask()">追加</button>
     </div>
     <ul id="taskList"></ul>
-
+    <!-- タスク入力欄の下に追加 -->
+<select id="taskPriority">
+  <option value="low">低</option>
+  <option value="medium">中</option>
+  <option value="high">高</option>
+</select>
     <h2>⏱ タイマー</h2>
     <div class="timer-settings">
       <div class="timer-block">
@@ -58,6 +63,17 @@
   <script src="script.js"></script>
 
   <audio id="endSound" src="Countdown06-1.mp3" preload="auto"></audio>
+
+
+<!-- タイマー表示 -->
+<div id="timerDisplay">00:00</div>
+
+<!-- タイマーボタン -->
+<button onclick="startTimer()">スタート</button>
+<button onclick="pauseTimer()">一時停止</button>
+
+<!-- 効果音 -->
+<audio id="endSound" src="end.mp3" preload="auto"></audio>
 
 
 </body>
