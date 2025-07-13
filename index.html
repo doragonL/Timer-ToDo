@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>集中ToDoアプリ</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>📝 ToDo リスト</h1>
+    <div class="todo-input">
+      <input type="text" id="taskInput" placeholder="新しいタスクを入力" />
+      <button onclick="addTask()">追加</button>
+    </div>
+    <ul id="taskList"></ul>
+
+    <h2>⏱ タイマー</h2>
+    <div class="timer-settings">
+      <div class="timer-block">
+        <p>集中時間</p>
+        <div class="time-inputs">
+          <label>
+            <input type="number" id="focusMinutes" value="25" min="0" /> 分
+          </label>
+          <label>
+            <input type="number" id="focusSeconds" value="0" min="0" max="59" /> 秒
+          </label>
+        </div>
+      </div>
+
+      <div class="timer-block">
+        <p>休憩時間</p>
+        <div class="time-inputs">
+          <label>
+            <input type="number" id="breakMinutes" value="5" min="0" /> 分
+          </label>
+          <label>
+            <input type="number" id="breakSeconds" value="0" min="0" max="59" /> 秒
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔊 音を鳴らす用（end.mp3は同じフォルダに置いてください） -->
+    <audio id="endSound" src="end.mp3" preload="auto"></audio>
+  </div>
+
+  <!-- 📜 通知の許可リクエスト（ページ読み込み時） -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (Notification.permission !== 'granted') {
+        Notification.requestPermission();
+      }
+    });
+  </script>
+
+  <script src="script.js"></script>
+
+  <audio id="endSound" src="Countdown06-1.mp3" preload="auto"></audio>
+
+<!-- <input type="text" id="taskInput" placeholder="新しいタスクを入力" /> -->
+<!-- <button onclick="addTask()">追加</button> -->
+
+</body>
+</html>
